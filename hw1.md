@@ -101,7 +101,16 @@ package main
 import "fmt"
 
 func main() {
-	// ваш код вставлять сюда
+	var n, c int
+	fmt.Scan(&n)
+	for ; n > 0; n -- {
+		var num int
+		fmt.Scan(&num)
+		if num == 0 {
+			c++
+		}
+	}
+	fmt.Println(c)
 }
 ```
 
@@ -112,7 +121,11 @@ package main
 import "fmt"
 
 func main() {
-	// ваш код вставлять сюда
+	var n int
+	fmt.Scan(&n)
+	for k := 1; k < n; k *= 2 {
+		fmt.Println(k)
+	}
 }
 ```
 
@@ -123,7 +136,37 @@ package main
 import "fmt"
 
 func main() {
-	// ваш код вставлять сюда
+	var n, c int
+	fmt.Scan(&n)
+	for i := 1; i <= n; i++ {
+		if n % i == 0 {
+			c++
+		}
+	}
+	fmt.Println(c)
+
+// 	var n int
+// 	fmt.Scan(&n)
+// 	var power = make(map[int]int)
+// loop:
+// 	for {
+// 		for i := 2; ; i++ {
+// 			if i <= n {
+// 				if n % i == 0 {
+// 					power[i]++
+// 					n /= i
+// 					continue loop
+// 				}
+// 			} else {
+// 				break loop
+// 			}
+// 		}
+// 	}
+// 	var c = 1
+// 	for _, v := range power {
+// 		c *= v + 1
+// 	}
+// 	fmt.Println(c)
 }
 ```
 
@@ -134,7 +177,14 @@ package main
 import "fmt"
 
 func main() {
-	// ваш код вставлять сюда
+	var a, b, c, d int
+	fmt.Scan(&a, &b, &c, &d)
+
+	for x := 0; x <= 1000; x++ {
+		if a * x * x * x + b * x * x + c * x + d == 0 {
+			fmt.Println(x)
+		}
+	}
 }
 ```
 
@@ -145,7 +195,14 @@ package main
 import "fmt"
 
 func main() {
-	// ваш код вставлять сюда
+	var n int
+	fmt.Scan(&n)
+
+	a, b := 0, 1
+	for i := 0; i < n; i++ {
+		a, b = b, a + b
+	}
+	fmt.Println(a)
 }
 ```
 
@@ -156,7 +213,12 @@ package main
 import "fmt"
 
 func main() {
-	// ваш код вставлять сюда
+	var n int
+	fmt.Scan(&n)
+
+	n %= 24 * 60 * 60
+
+	fmt.Printf("%d:%02d:%02d", n / 3600, (n % 3600) / 60, n % 60)
 }
 ```
 
@@ -167,6 +229,26 @@ package main
 import "fmt"
 
 func main() {
-	// ваш код вставлять сюда
+	var max, prev, count int
+	for {
+		var n int 
+		fmt.Scan(&n)
+
+		if n == 0 {
+			break
+		}
+
+		if n != prev {
+			count = 1
+		} else {
+			count++
+		}
+		
+		if count > max {
+			max = count
+		}
+		prev = n
+	}
+	fmt.Println(max)
 }
 ```
