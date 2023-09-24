@@ -144,7 +144,7 @@ func main() {
 		}
 	}
 	fmt.Println(c)
-
+// второй вариант в разы быстрее для больших чисел
 // 	var n int
 // 	fmt.Scan(&n)
 // 	var power = make(map[int]int)
