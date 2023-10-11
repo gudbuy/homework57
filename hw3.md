@@ -6,8 +6,6 @@
 ```golang
 package main
 
-import "fmt"
-
 func MyRange(start, stop, step int) []int {
 	var arr []int
 	for i := start; i < stop; i+=step {
@@ -39,9 +37,6 @@ func MyFactorial(n int) int {
 }
 
 func MyGcd(a, b int) int {
-	if a < b {
-		a, b = b, a
-	}
 	for b != 0 {
 		a, b = b, a % b
 	}
@@ -65,9 +60,6 @@ func MyReverse(arr []int) []int {
 }
 
 func MyShorten(a, b int) (int, int) {
-	if a == 0 {
-		return 0, 1
-	}
 	return a / MyGcd(a, b), b / MyGcd(a, b)
 }
 
