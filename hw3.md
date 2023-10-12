@@ -6,6 +6,8 @@
 ```golang
 package main
 
+import "fmt"
+
 func MyRange(start, stop, step int) []int {
 	var arr []int
 	for i := start; i < stop; i+=step {
@@ -43,7 +45,7 @@ func MyGcd(a, b int) int {
 	return a
 }
 
-func IsSymmetrical(arr []int) bool {
+func IsSymmetric(arr []int) bool {
 	for i := 0; i < len(arr) / 2; i++ {
 		if arr[i] != arr[len(arr)-1-i] {
 			return false
@@ -60,12 +62,17 @@ func MyReverse(arr []int) []int {
 }
 
 func MyShorten(a, b int) (int, int) {
-	return a / MyGcd(a, b), b / MyGcd(a, b)
+	p := a / MyGcd(a, b)
+	q := b / MyGcd(a, b)
+	if q < 0 {
+		p, q = -p, -q
+	}
+	return p, q
 }
 
 func IsPrime(a int) bool {
 	for i := 2; i < a; i++ {
-		if a % i == 0{
+		if a % i == 0 {
 			return false
 		}
 	}
@@ -95,5 +102,6 @@ func IsSet(arr []int) bool {
 	return true
 	// return len(MySet(arr)) == len(arr)
 }
+
 
 ```
